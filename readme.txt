@@ -1,4 +1,4 @@
-=== VenoBox Lightbox ===
+=== Bootstrap Conditional ===
 
 Author: Neil Gowran
 Contributors: neilgee
@@ -19,7 +19,7 @@ Conditionally load Bootstrap 4 on each post or page.
 == Description ==
 
 Conditionally load Bootstrap 4 on each post or page.
-
+Bootstrap version 4.3.1
 
 == Installation ==
 
@@ -33,6 +33,7 @@ This section describes how to install the plugin:
 == Usage ==
 
 Click checkbox option to enable Bootstrap 4 on certain post/pages.
+Loads both Javascript and CSS.
 
 == Changelog ==
 
