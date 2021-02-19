@@ -98,11 +98,12 @@ class Bootstrap_Conditional{
 		/* Get the current post ID. */
 		$post_id = get_the_ID();
 		$disable_basebootstrap = get_post_meta( $post_id, '_bootstrap_check', true );
+		$theme = wp_get_theme(); // gets the current theme
 
 
-		if($disable_basebootstrap !=='') {
+		if($disable_basebootstrap !=='' && 'Beaver Builder Theme' == $theme->parent_theme) {
 			wp_dequeue_style( 'base-4' );
-        	wp_deregister_style( 'base-4' );
+			wp_deregister_style( 'base-4' );
 		}
 	}
 	
