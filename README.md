@@ -2,8 +2,8 @@
 
 Author: Neil Gowran
 Contributors: neilgee
-Version: 2.0.5
-Stable tag: 2.0.5
+Version: 1.1.0
+Stable tag: 1.1.0
 Tested up to: 5.6
 Requires at least: 4.0
 Plugin Name: Bootstrap Conditional
@@ -33,9 +33,15 @@ This section describes how to install the plugin:
 == Usage ==
 
 Click checkbox option to enable Bootstrap 4 on certain post/pages.
-Loads both Javascript and CSS.
+Loads both Bootstrap Javascript and CSS.
+
+Optionally 
 
 == Changelog ==
 
-1.0.0 - 15/06/16
+1.1.0 - 20/02/21
+- Add PopperJS Option
+- Dequeue minimal base CSS from Beaver Builder theme on pages/posts set to load full Bootstrap
+
+1.0.0 - 15/02/21
 - Initial release.

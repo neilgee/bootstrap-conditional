@@ -54,7 +54,7 @@ class Bootstrap_Conditional{
 	public function hooks() {
 		// Plugin text domain.
 		// add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ),  );
 		add_action( 'wp_print_styles', array( $this, 'print_styles' ) );
 		// add_action( 'admin_menu', array( $this, 'plugin_page' ) );
 		// add_action( 'admin_init', array( $this, 'plugin_settings' ) );
@@ -81,12 +81,16 @@ class Bootstrap_Conditional{
 		/* Get the current post ID. */
 		$post_id = get_the_ID();
 		$disable_basebootstrap = get_post_meta( $post_id, '_bootstrap_check', true );
+		$add_popper = get_post_meta( $post_id, '_bootstrap_check_popper', true );
 
-		
+		if( $add_popper !=='' && is_singular() ){
+			wp_enqueue_script( 'popper', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper.min.js', array('jquery'), '1.14.3', true );
+			wp_enqueue_script( 'popper_init', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.js', array( 'popper'), $this->bl_version, true );
+		}
+
 		if( $disable_basebootstrap !=='' && is_singular() ){
-			wp_enqueue_script( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-4.min.js', array(), $this->bl_version, true );
-			wp_enqueue_style( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-4.min.css', array(), $this->bl_version, 'all' );
-
+			wp_enqueue_script( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-4.min.js', array(), '4.3.1', true );
+			wp_enqueue_style( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-4.min.css', array(), '4.3.1', 'all' );
 		}
 	}
 
@@ -103,7 +107,8 @@ class Bootstrap_Conditional{
 
 		if($disable_basebootstrap !=='' && 'Beaver Builder Theme' == $theme->parent_theme) {
 			wp_dequeue_style( 'base-4' );
-			wp_deregister_style( 'base-4' );
+        	wp_deregister_style( 'base-4' );
+			//echo 'You are BB';
 		}
 	}
 	
@@ -115,10 +120,14 @@ class Bootstrap_Conditional{
 	public function bcmeta_create() {
 		$post_id = get_the_ID();
 		$value = get_post_meta( $post_id, '_bootstrap_check', true );
+		$value_popper = get_post_meta( $post_id, '_bootstrap_check_popper', true );
 		wp_nonce_field( 'bootstrap_nonce_' . $post_id, 'bootstrap_nonce' );
 		?>
 		<div class="misc-pub-section misc-pub-section-last">
 			<label><input type="checkbox" value="1" <?php checked( $value, true, true ); ?> name="_bootstrap_check" /><?php esc_attr_e( 'Load Full Bootstrap', 'bootstrap-conditional' ); ?></label>
+		</div>
+		<div class="misc-pub-section misc-pub-section-last">
+			<label><input type="checkbox" value="1" <?php checked( $value_popper, true, true ); ?> name="_bootstrap_check_popper" /><?php esc_attr_e( 'Add PopperJS', 'bootstrap-conditional' ); ?></label>
 		</div>
 		<?php
 	}
@@ -146,6 +155,13 @@ class Bootstrap_Conditional{
 			update_post_meta( $post_id, '_bootstrap_check', $bootstrap_check );
 		} else {
 			delete_post_meta( $post_id, '_bootstrap_check' );
+		}
+
+		$bootstrap_check_popper = filter_input( INPUT_POST, '_bootstrap_check', FILTER_SANITIZE_STRING );
+		if ( $bootstrap_check_popper ) {
+			update_post_meta( $post_id, '_bootstrap_check_popper', $bootstrap_check_popper );
+		} else {
+			delete_post_meta( $post_id, '_bootstrap_check_popper' );
 		}
 	}
 
