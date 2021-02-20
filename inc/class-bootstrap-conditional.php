@@ -105,7 +105,7 @@ class Bootstrap_Conditional{
 		$theme = wp_get_theme(); // gets the current theme
 
 
-		if($disable_basebootstrap !=='' && 'Beaver Builder Theme' == $theme->parent_theme) {
+		if( $disable_basebootstrap !=='' && 'Beaver Builder Theme' == $theme->parent_theme ) {
 			wp_dequeue_style( 'base-4' );
         	wp_deregister_style( 'base-4' );
 			//echo 'You are BB';
@@ -157,7 +157,7 @@ class Bootstrap_Conditional{
 			delete_post_meta( $post_id, '_bootstrap_check' );
 		}
 
-		$bootstrap_check_popper = filter_input( INPUT_POST, '_bootstrap_check', FILTER_SANITIZE_STRING );
+		$bootstrap_check_popper = filter_input( INPUT_POST, '_bootstrap_check_popper', FILTER_SANITIZE_STRING );
 		if ( $bootstrap_check_popper ) {
 			update_post_meta( $post_id, '_bootstrap_check_popper', $bootstrap_check_popper );
 		} else {
