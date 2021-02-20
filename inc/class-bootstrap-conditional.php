@@ -21,7 +21,7 @@ class Bootstrap_Conditional{
 	 *
 	 * @var version
 	 */
-	public $bl_version = '1.0.0';
+	public $bl_version = '1.1.0';
 	/**
 	 * Holds an instance of the object
 	 *
