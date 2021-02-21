@@ -2,8 +2,8 @@
 
 Author: Neil Gowran
 Contributors: neilgee
-Version: 1.1.0
-Stable tag: 1.1.0
+Version: 1.2.0
+Stable tag: 1.2.0
 Tested up to: 5.6
 Requires at least: 4.0
 Plugin Name: Bootstrap Conditional
@@ -14,12 +14,13 @@ License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 Donate link:
 
-Conditionally load Bootstrap 4 on each post or page.
+Conditionally load Bootstrap on each post or page.
 
 == Description ==
 
-Conditionally load Bootstrap 4 on each post or page.
-Bootstrap version 4.3.1
+Conditionally load Bootstrap on each post or page.
+Bootstrap version 3.4.1
+Bootstrap version 4.6.0
 
 == Installation ==
 
@@ -32,12 +33,16 @@ This section describes how to install the plugin:
 
 == Usage ==
 
-Click checkbox option to enable Bootstrap 4 on certain post/pages.
-Loads both Bootstrap Javascript and CSS.
+Click dropdown option to enable Bootstrap versions 3 or 4 on certain post/pages.
+Loads both Javascript and CSS.
 
-Optionally 
+If using the Beaver Theme best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3 or 4, then use the Bootstrap metabox on each post/page needed to run the full framework.
 
 == Changelog ==
+
+1.2.0 - 21/02/21
+- Add different Bootstrap versions 3,4 as options
+
 
 1.1.0 - 20/02/21
 - Add PopperJS Option
@@ -45,3 +50,4 @@ Optionally
 
 1.0.0 - 15/02/21
 - Initial release.
+

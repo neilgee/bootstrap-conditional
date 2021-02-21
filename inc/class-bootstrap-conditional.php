@@ -21,7 +21,7 @@ class Bootstrap_Conditional{
 	 *
 	 * @var version
 	 */
-	public $bl_version = '1.1.0';
+	public $bl_version = '1.2.0';
 	/**
 	 * Holds an instance of the object
 	 *
@@ -68,7 +68,7 @@ class Bootstrap_Conditional{
 	 * Add the bootstrap option metabox to all post types
 	 */
 	public function post_options_metabox() {
-		add_meta_box( 'post_options_bl', __( 'Bootstrap 4', 'bootstrap-conditional' ), array( $this, 'bcmeta_create' ), get_post_types(), 'side', 'low' );
+		add_meta_box( 'post_options_bl', __( 'Load Bootstrap', 'bootstrap-conditional' ), array( $this, 'bcmeta_create' ), get_post_types(), 'side', 'low' );
 	}
 
 
@@ -80,17 +80,24 @@ class Bootstrap_Conditional{
 
 		/* Get the current post ID. */
 		$post_id = get_the_ID();
-		$disable_basebootstrap = get_post_meta( $post_id, '_bootstrap_check', true );
 		$add_popper = get_post_meta( $post_id, '_bootstrap_check_popper', true );
+		$value_version = get_post_meta( $post_id, '_bootstrap_check_version', true );
 
 		if( $add_popper !=='' && is_singular() ){
 			wp_enqueue_script( 'popper', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper.min.js', array('jquery'), '1.14.3', true );
 			wp_enqueue_script( 'popper_init', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.js', array( 'popper'), $this->bl_version, true );
 		}
 
-		if( $disable_basebootstrap !=='' && is_singular() ){
-			wp_enqueue_script( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-4.min.js', array(), '4.3.1', true );
-			wp_enqueue_style( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-4.min.css', array(), '4.3.1', 'all' );
+		if( $value_version =='None' ){
+			return;
+		}
+		elseif( $value_version =='3' && is_singular() ){
+			wp_enqueue_script( 'bootstrap-3', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-3.min.js', array(), '3.4.1', true );
+			wp_enqueue_style( 'bootstrap-3', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-3.min.css', array(), '3.4.1', 'all' );
+		}
+		elseif( $value_version =='4' && is_singular() ){
+			wp_enqueue_script( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-4.min.js', array(), '4.6.0', true );
+			wp_enqueue_style( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-4.min.css', array(), '4.6.0', 'all' );
 		}
 	}
 
@@ -101,11 +108,15 @@ class Bootstrap_Conditional{
 
 		/* Get the current post ID. */
 		$post_id = get_the_ID();
-		$disable_basebootstrap = get_post_meta( $post_id, '_bootstrap_check', true );
 		$theme = wp_get_theme(); // gets the current theme
+		$value_version = get_post_meta( $post_id, '_bootstrap_check_version', true );
 
-
-		if( $disable_basebootstrap !=='' && 'Beaver Builder Theme' == $theme->parent_theme ) {
+		if( $value_version =='None' ){
+			return;
+		}
+		elseif ( in_array( $value_version , array('3','4'), true ) && 'Beaver Builder Theme' == $theme->parent_theme ) {
+			wp_dequeue_style( 'base' );
+        	wp_deregister_style( 'base' );
 			wp_dequeue_style( 'base-4' );
         	wp_deregister_style( 'base-4' );
 			//echo 'You are BB';
@@ -119,17 +130,26 @@ class Bootstrap_Conditional{
 	 */
 	public function bcmeta_create() {
 		$post_id = get_the_ID();
-		$value = get_post_meta( $post_id, '_bootstrap_check', true );
 		$value_popper = get_post_meta( $post_id, '_bootstrap_check_popper', true );
+		$value_version = get_post_meta( $post_id, '_bootstrap_check_version', true );
 		wp_nonce_field( 'bootstrap_nonce_' . $post_id, 'bootstrap_nonce' );
 		?>
+		<p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="_bootstrap_check_version">Choose Bootstrap Version :  </label></p>
+		<select name="_bootstrap_check_version" id="_bootstrap_check_version">
+			<option value="None"<?php selected( $value_version, "None", ); ?> >No Bootstrap</option>
+			<option value="3"<?php selected( $value_version, "3" ); ?> >Bootstrap 3</option>
+			<option value="4"<?php selected( $value_version, "4" ); ?> >Bootstrap 4</option>
+		</select>
+
 		<div class="misc-pub-section misc-pub-section-last">
-			<label><input type="checkbox" value="1" <?php checked( $value, true, true ); ?> name="_bootstrap_check" /><?php esc_attr_e( 'Load Full Bootstrap', 'bootstrap-conditional' ); ?></label>
+			<label class="selectit">
+				<input type="checkbox" value="1" <?php checked( $value_popper, true, true ); ?> name="_bootstrap_check_popper" /><?php esc_attr_e( 'Add PopperJS', 'bootstrap-conditional' ); ?>
+			</label>
 		</div>
-		<div class="misc-pub-section misc-pub-section-last">
-			<label><input type="checkbox" value="1" <?php checked( $value_popper, true, true ); ?> name="_bootstrap_check_popper" /><?php esc_attr_e( 'Add PopperJS', 'bootstrap-conditional' ); ?></label>
-		</div>
+
 		<?php
+
+		//var_dump($value_version);
 	}
 
 	/**
@@ -162,6 +182,13 @@ class Bootstrap_Conditional{
 			update_post_meta( $post_id, '_bootstrap_check_popper', $bootstrap_check_popper );
 		} else {
 			delete_post_meta( $post_id, '_bootstrap_check_popper' );
+		}
+
+		$bootstrap_check_version = filter_input( INPUT_POST, '_bootstrap_check_version', FILTER_SANITIZE_STRING );
+		if ( $bootstrap_check_version ) {
+			update_post_meta( $post_id, '_bootstrap_check_version', $bootstrap_check_version );
+		} else {
+			delete_post_meta( $post_id, '_bootstrap_check_version' );
 		}
 	}
 
