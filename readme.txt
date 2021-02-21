@@ -19,8 +19,8 @@ Conditionally load Bootstrap on each post or page.
 == Description ==
 
 Conditionally load Bootstrap on each post or page.
-Bootstrap version 3.4.1
-Bootstrap version 4.6.0
+ - Bootstrap version 3.4.1
+ - Bootstrap version 4.6.0
 
 == Installation ==
 
@@ -28,7 +28,7 @@ This section describes how to install the plugin:
 
 1. Upload the `bootstrap-conditional` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Option to enable Bootstrap 4 appears in each post/page.
+3. Dropdown option to enable Bootstrap appears in each post/page.
 
 
 == Usage ==
