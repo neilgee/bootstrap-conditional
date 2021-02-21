@@ -114,7 +114,7 @@ class Bootstrap_Conditional{
 		if( $value_version =='None' ){
 			return;
 		}
-		elseif ( in_array( $value_version , array('3','4'), true ) && 'Beaver Builder Theme' == $theme->parent_theme ) {
+		elseif ( in_array( $value_version , array('3','4'), true ) && 'Beaver Builder Theme' == $theme->parent_theme && !is_archive() ) {
 			wp_dequeue_style( 'base' );
         	wp_deregister_style( 'base' );
 			wp_dequeue_style( 'base-4' );
