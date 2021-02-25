@@ -16,7 +16,8 @@
 
 ## Description
 
-Conditionally load Bootstrap on each post or page.
+A WordPress plugin to conditionally load Bootstrap on selected posts or pages.
+
 Choose which version:
  - Bootstrap version 3.4.1
  - Bootstrap version 4.6.0
