@@ -22,6 +22,8 @@ Choose which version:
  - Bootstrap version 3.4.1
  - Bootstrap version 4.6.0
 
+ ![Screenshot](boostrap-conditional-metabox.png)
+
 ##  Installation
 
 This section describes how to install the plugin:
