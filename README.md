@@ -1,24 +1,23 @@
-# Bootstrap Conditiona
+# Bootstrap Conditional
 
-Author: Neil Gowran
-Contributors: neilgee
-Version: 1.2.0
-Stable tag: 1.2.0
-Tested up to: 5.6
-Requires at least: 4.0
-Plugin Name: Bootstrap Conditional
-Plugin URI: https://wordpress.org/plugins/bootstrap-conditional/
-Description: Bootstrap
-Author URI: http://wpbeaches.com/
-License: GPL-2.0+
-License URI: http://www.gnu.org/licenses/gpl-2.0.txt
-Donate link:
-
-Conditionally load Bootstrap on each post or page.
+ - Author: Neil Gowran
+ - Contributors: neilgee
+ - Version: 1.2.0
+ - Stable tag: 1.2.0
+ - Tested up to: 5.6
+ - Requires at least: 4.0
+ - Plugin Name: Bootstrap Conditional
+ - Plugin URI: https://github.com/neilgee/bootstrap-conditional
+ - Description: Bootstrap Loader
+ - Author URI: http://wpbeaches.com/
+ - License: GPL-2.0+
+ - License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ - Donate link:
 
 ## Description
 
 Conditionally load Bootstrap on each post or page.
+Choose which version:
  - Bootstrap version 3.4.1
  - Bootstrap version 4.6.0
 
@@ -34,9 +33,9 @@ This section describes how to install the plugin:
 ##  Usage
 
 Click dropdown option to enable Bootstrap versions 3 or 4 on certain post/pages.
-Loads both Javascript and CSS.
+Loads both Bootstrap Javascript and CSS.
 
-If using the Beaver Theme best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3 or 4, then use the Bootstrap metabox on each post/page needed to run the full framework.
+If using the Beaver Theme, best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3 or 4, then use the Bootstrap metabox on each post/page needed to run the full framework.
 
 ### Changelog
 
