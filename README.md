@@ -1,4 +1,4 @@
-=== Bootstrap Conditional ===
+# Bootstrap Conditiona
 
 Author: Neil Gowran
 Contributors: neilgee
@@ -16,13 +16,13 @@ Donate link:
 
 Conditionally load Bootstrap on each post or page.
 
-== Description ==
+## Description
 
 Conditionally load Bootstrap on each post or page.
  - Bootstrap version 3.4.1
  - Bootstrap version 4.6.0
 
-== Installation ==
+##  Installation
 
 This section describes how to install the plugin:
 
@@ -31,14 +31,14 @@ This section describes how to install the plugin:
 3. Dropdown option to enable Bootstrap appears in each post/page.
 
 
-== Usage ==
+##  Usage
 
 Click dropdown option to enable Bootstrap versions 3 or 4 on certain post/pages.
 Loads both Javascript and CSS.
 
 If using the Beaver Theme best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3 or 4, then use the Bootstrap metabox on each post/page needed to run the full framework.
 
-== Changelog ==
+### Changelog
 
 1.2.0 - 21/02/21
 - Add different Bootstrap versions 3,4 as options
