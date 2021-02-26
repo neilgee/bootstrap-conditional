@@ -17,7 +17,7 @@
  */
 class Bootstrap_Conditional{
 	/**
-	 * Bootstrap js version
+	 * Bootstrap Conditional version
 	 *
 	 * @var version
 	 */
@@ -25,13 +25,13 @@ class Bootstrap_Conditional{
 	/**
 	 * Holds an instance of the object
 	 *
-	 * @var MeMeMe_Plugin
+	 * @var Bootstrap_Conditional
 	 */
 	protected static $instance = null;
 	/**
 	 * Returns the running object
 	 *
-	 * @return MeMeMe_Plugin
+	 * @return Bootstrap_Conditional
 	 */
 	public static function get_instance() {
 		if ( null === self::$instance ) {
@@ -195,7 +195,7 @@ class Bootstrap_Conditional{
 }
 
 /**
- * Helper function to get/return the MeMeMe_Plugin object
+ * Helper function to get/return the Bootstrap_Conditional object
  *
  * @return Bootstrap_Conditionalobject
  */
