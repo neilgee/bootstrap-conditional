@@ -83,13 +83,12 @@ class Bootstrap_Conditional{
 		$add_popper = get_post_meta( $post_id, '_bootstrap_check_popper', true );
 		$value_version = get_post_meta( $post_id, '_bootstrap_check_version', true );
 
-		if( $add_popper !=='' && is_singular() ){
-			wp_enqueue_script( 'popper', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper.min.js', array('jquery'), '1.14.3', true );
+		if( $add_popper !=='' && is_singular() && $value_version !=='5' ){
+			wp_enqueue_script( 'popper', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper.min.js', array('jquery'), '1.16.1', true );
 			wp_enqueue_script( 'popper_init', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.js', array( 'popper'), $this->bl_version, true );
 		}
-		elseif( $add_popper !=='' && is_singular() && $value_version =='5' ){
+		if( $add_popper !=='' && is_singular() && $value_version =='5' ){
 			wp_enqueue_script( 'popper2.6.0', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper.2.6.0.min.js', array(), '2.6.0', true );
-			wp_enqueue_script( 'popper_init5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.5.js', array( 'popper2.6.0'), $this->bl_version, true );
 		}
 
 		if( $value_version =='None' ){
@@ -107,6 +106,10 @@ class Bootstrap_Conditional{
 			wp_enqueue_script( 'bootstrap-5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-5.min.js', array(), '5.0.0', true );
 			wp_enqueue_style( 'bootstrap-5', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-5.min.css', array(), '5.0.0', 'all' );
 		}
+
+		if( $add_popper !=='' && is_singular() && $value_version =='5' ){
+			wp_enqueue_script( 'popper_init5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.5.js', array( 'popper2.6.0'), $this->bl_version, true );
+		}
 	}
 
 	/**
@@ -122,7 +125,7 @@ class Bootstrap_Conditional{
 		if( $value_version =='None' ){
 			return;
 		}
-		elseif ( in_array( $value_version , array('3','4'), true ) && 'Beaver Builder Theme' == $theme->parent_theme && is_singular() ) {
+		elseif ( 'Beaver Builder Theme' == $theme->parent_theme && is_singular() ) {
 			wp_dequeue_style( 'base' );
         	wp_deregister_style( 'base' );
 			wp_dequeue_style( 'base-4' );

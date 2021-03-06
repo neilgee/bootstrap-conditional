@@ -44,9 +44,13 @@ If using the Beaver Theme, best usage is to set the theme's customizer setting '
 
 ### Changelog
 
+1.3.0 - 07/03/21
+- Add Bootstrap version 5 as option
+- Include JS for tooltips and popovers for BS5 when PopperJS is selected
+- Update PopperJS to 1.16.1 for BS 3 & 4
+
 1.2.0 - 21/02/21
 - Add different Bootstrap versions 3,4 as options
-
 
 1.1.0 - 20/02/21
 - Add PopperJS Option
