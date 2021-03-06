@@ -2,7 +2,7 @@
 
  - Author: Neil Gowran
  - Contributors: neilgee
- - Version: 1.2.0
+ - Version: 1.3.0
  - Stable tag: 1.2.0
  - Tested up to: 5.6
  - Requires at least: 4.0
@@ -21,6 +21,7 @@ A WordPress plugin to conditionally load Bootstrap on selected posts or pages.
 Choose which version:
  - Bootstrap version 3.4.1
  - Bootstrap version 4.6.0
+ - Bootstrap version 5.0.x
 
 ##  Installation
 
@@ -33,12 +34,12 @@ This section describes how to install the plugin:
 
 ##  Usage
 
-Click dropdown option to enable Bootstrap versions 3 or 4 on certain post/pages.
+Click dropdown option to enable Bootstrap versions 3,4 or 5 on certain post/pages.
 Loads both Bootstrap Javascript and CSS.
 
 Use in Classic Editor or GB.
 
-If using the Beaver Theme, best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3 or 4, then use the Bootstrap metabox on each post/page needed to run the full framework.
+If using the Beaver Theme, best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3,4 or 5, then use the Bootstrap metabox on each post/page needed to run the full framework.
 
  ![Screenshot](boostrap-conditional-metabox.png)
 
