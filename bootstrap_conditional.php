@@ -16,5 +16,5 @@ define( 'BOOTSTRAP_CONDITIONAL', '1.2.0' );
 if ( ! class_exists( 'Bootstrap_Conditional', false ) ) {
 	require_once dirname( __FILE__ ) . '/inc/class-bootstrap-conditional.php';
 }
-// Get it started.
+// Get it started
 bootstrap_conditional();
