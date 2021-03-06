@@ -87,6 +87,10 @@ class Bootstrap_Conditional{
 			wp_enqueue_script( 'popper', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper.min.js', array('jquery'), '1.14.3', true );
 			wp_enqueue_script( 'popper_init', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.js', array( 'popper'), $this->bl_version, true );
 		}
+		elseif( $add_popper !=='' && is_singular() && $value_version =='5' ){
+			wp_enqueue_script( 'popper2.6.0', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper.2.6.0.min.js', array(), '2.6.0', true );
+			wp_enqueue_script( 'popper_init5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.5.js', array( 'popper2.6.0'), $this->bl_version, true );
+		}
 
 		if( $value_version =='None' ){
 			return;
@@ -98,6 +102,10 @@ class Bootstrap_Conditional{
 		elseif( $value_version =='4' && is_singular() ){
 			wp_enqueue_script( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-4.min.js', array(), '4.6.0', true );
 			wp_enqueue_style( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-4.min.css', array(), '4.6.0', 'all' );
+		}
+		elseif ( $value_version =='5' && is_singular() ){
+			wp_enqueue_script( 'bootstrap-5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-5.min.js', array(), '5.0.0', true );
+			wp_enqueue_style( 'bootstrap-5', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-5.min.css', array(), '5.0.0', 'all' );
 		}
 	}
 
@@ -139,6 +147,7 @@ class Bootstrap_Conditional{
 			<option value="None"<?php selected( $value_version, "None", ); ?> >No Bootstrap</option>
 			<option value="3"<?php selected( $value_version, "3" ); ?> >Bootstrap 3</option>
 			<option value="4"<?php selected( $value_version, "4" ); ?> >Bootstrap 4</option>
+			<option value="5"<?php selected( $value_version, "5" ); ?> >Bootstrap 5</option>
 		</select>
 
 		<div class="misc-pub-section misc-pub-section-last">
