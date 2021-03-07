@@ -39,7 +39,7 @@ Loads both Bootstrap Javascript and CSS.
 
 Use in Classic Editor or GB.
 
-If using the Beaver Theme, best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3,4 or 5, then use the Bootstrap metabox on each post/page needed to run the full framework.
+If using the Beaver Theme, best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3 or 4, then use the Bootstrap metabox on each post/page needed to run the full framework.
 
  ![Screenshot](boostrap-conditional-metabox.png)
 
