@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/plugins/bootstrap-conditional/
  * Description: Bootstrap Conditional - load full Bootstrap version 3,4 or 5
  * Author: <a href="https://wpbeaches.com">Neil Gowran</a>,
- * Version: 1.3.0
+ * Version: 1.3.1
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: bootstrap-conditional
