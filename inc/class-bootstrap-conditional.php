@@ -21,7 +21,7 @@ class Bootstrap_Conditional{
 	 *
 	 * @var version
 	 */
-	public $bl_version = '1.3.0';
+	public $bl_version = '1.3.1';
 	/**
 	 * Holds an instance of the object
 	 *
@@ -122,7 +122,7 @@ class Bootstrap_Conditional{
 		$theme = wp_get_theme(); // gets the current theme
 		$value_version = get_post_meta( $post_id, '_bootstrap_check_version', true );
 
-		if( $value_version =='None' ){
+		if( $value_version =='None' || $value_version =='' ){
 			return;
 		}
 		elseif ( 'Beaver Builder Theme' == $theme->parent_theme && is_singular() ) {

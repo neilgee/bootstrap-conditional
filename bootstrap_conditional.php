@@ -12,7 +12,7 @@
  *
  * @package Bootstrap Conditional
  */
-define( 'BOOTSTRAP_CONDITIONAL', '1.3.0' );
+define( 'BOOTSTRAP_CONDITIONAL', '1.3.1' );
 if ( ! class_exists( 'Bootstrap_Conditional', false ) ) {
 	require_once dirname( __FILE__ ) . '/inc/class-bootstrap-conditional.php';
 }

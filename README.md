@@ -45,6 +45,9 @@ If using the Beaver Theme, best usage is to set the theme's customizer setting '
 
 ### Changelog
 
+1.3.1 - 09/03/21
+- Add check for Bootstrap variable to be equal to none
+
 1.3.0 - 07/03/21
 - Add Bootstrap version 5 as option
 - Include JS for tooltips and popovers for BS5 when PopperJS is selected
