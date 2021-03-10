@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Bootstrap Conditional
- * Plugin URI: https://wordpress.org/plugins/bootstrap-conditional/
+ * Plugin URI: https://github.com/neilgee/bootstrap-conditional
  * Description: Bootstrap Conditional - load full Bootstrap version 3,4 or 5
  * Author: <a href="https://wpbeaches.com">Neil Gowran</a>,
  * Version: 1.3.1
