@@ -127,9 +127,9 @@ class Bootstrap_Conditional{
 		}
 		elseif ( 'Beaver Builder Theme' == $theme->parent_theme && is_singular() ) {
 			wp_dequeue_style( 'base' );
-        	wp_deregister_style( 'base' );
+			wp_deregister_style( 'base' );
 			wp_dequeue_style( 'base-4' );
-        	wp_deregister_style( 'base-4' );
+			wp_deregister_style( 'base-4' );
 			//echo 'You are BB';
 		}
 	}
