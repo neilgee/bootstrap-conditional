@@ -41,7 +41,7 @@ Use in Classic Editor or GB.
 
 If using the Beaver Theme, best usage is to set the theme's customizer setting 'General > Layout > CSS framework' to Minimal Bootstrap 3 or 4, then use the Bootstrap metabox on each post/page needed to run the full framework.
 
- ![Screenshot](boostrap-conditional-metabox.png)
+![boostrap-conditional-metabox](https://user-images.githubusercontent.com/2056045/110589136-19227e80-81ca-11eb-8cc6-d503d24f01ef.png)
 
 ### Changelog
 
