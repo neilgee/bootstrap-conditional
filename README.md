@@ -19,9 +19,9 @@
 A WordPress plugin to conditionally load Bootstrap on selected posts or pages.
 
 Choose which version:
- - Bootstrap version 3.4.1
- - Bootstrap version 4.6.0
- - Bootstrap version 5.0.x
+  - Bootstrap version 5.0.0
+  - Bootstrap version 4.6.0
+  - Bootstrap version 3.4.1
 
 ##  Installation
 
@@ -45,9 +45,10 @@ If using the Beaver Theme, best usage is to set the theme's customizer setting '
 
 ### Changelog
 
-1.3.1 - 09/03/21
+1.3.1 - 10/03/21
 - Add check for Bootstrap variable to be equal to none
 - Update PopperJS to 2.9.0 for BS5.
+- Initialise Tooptips for BS3&4
 
 1.3.0 - 07/03/21
 - Add Bootstrap version 5 as option
