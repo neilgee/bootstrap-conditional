@@ -157,6 +157,7 @@ class Bootstrap_Conditional{
 			<label class="selectit">
 				<input type="checkbox" value="1" <?php checked( $value_popper, true, true ); ?> name="_bootstrap_check_popper" /><?php esc_attr_e( 'Add PopperJS', 'bootstrap-conditional' ); ?>
 			</label>
+			<p class="post-attributes-help-text">Needed for Popovers, Tooltips and Dropdowns.</p>
 		</div>
 
 		<?php
