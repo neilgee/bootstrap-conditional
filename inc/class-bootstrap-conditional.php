@@ -88,7 +88,7 @@ class Bootstrap_Conditional{
 			wp_enqueue_script( 'popper-init', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.js', array( 'popper'), $this->bl_version, true );
 		}
 		if( $add_popper !=='' && is_singular() && $value_version =='5' ){
-			wp_enqueue_script( 'popper-2.9.0', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper.2.9.0.min.js', array(), '2.9.0', true );
+			wp_enqueue_script( 'popper-2.9.0', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-2.9.0.min.js', array(), '2.9.0', true );
 		}
 
 		if( $value_version =='None' ){
