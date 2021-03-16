@@ -16,7 +16,7 @@
 
 ## Description
 
-A WordPress plugin to conditionally load Bootstrap on selected posts or pages.
+A WordPress plugin to conditionally load Bootstrap framework on selected posts or pages.
 
 Choose which version:
   - Bootstrap version 5.0.0
@@ -34,8 +34,8 @@ This section describes how to install the plugin:
 
 ##  Usage
 
-Click dropdown option to enable Bootstrap versions 3,4 or 5 on certain post/pages.
-Loads both Bootstrap Javascript and CSS.
+Metabox dropdown option to enable Bootstrap versions 3,4 or 5 on posts & pages.
+Loads both Bootstrap Javascript and CSS and optional PopperJS.
 
 Use in Classic Editor or GB.
 
