@@ -19,7 +19,7 @@
 A WordPress plugin to conditionally load Bootstrap framework on selected posts or pages.
 
 Choose which version:
-  - Bootstrap version 5.0.0
+  - Bootstrap version 5.0.1
   - Bootstrap version 4.6.0
   - Bootstrap version 3.4.1
 
@@ -44,6 +44,10 @@ If using the Beaver Theme, best usage is to set the theme's customizer setting '
 ![boostrap-conditional-metabox](https://user-images.githubusercontent.com/2056045/110589136-19227e80-81ca-11eb-8cc6-d503d24f01ef.png)
 
 ### Changelog
+
+1.3.2 - 14/05/21
+- Update to BS 5.0.1
+- Update PopperJS to 2.9.2 for BS5.
 
 1.3.1 - 10/03/21
 - Add check for Bootstrap variable to be equal to none

@@ -21,7 +21,7 @@ class Bootstrap_Conditional{
 	 *
 	 * @var version
 	 */
-	public $bl_version = '1.3.1';
+	public $bl_version = '1.3.2';
 	/**
 	 * Holds an instance of the object
 	 *
@@ -88,7 +88,7 @@ class Bootstrap_Conditional{
 			wp_enqueue_script( 'popper-init', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init.js', array( 'popper'), $this->bl_version, true );
 		}
 		if( $add_popper !=='' && is_singular() && $value_version =='5' ){
-			wp_enqueue_script( 'popper-2.9.0', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-2.9.0.min.js', array(), '2.9.0', true );
+			wp_enqueue_script( 'popper-2.9.2', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-2.9.2.min.js', array(), '2.9.2', true );
 		}
 
 		if( $value_version =='None' ){
@@ -103,12 +103,12 @@ class Bootstrap_Conditional{
 			wp_enqueue_style( 'bootstrap-4', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-4.min.css', array(), '4.6.0', 'all' );
 		}
 		elseif ( $value_version =='5' && is_singular() ){
-			wp_enqueue_script( 'bootstrap-5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-5.min.js', array(), '5.0.0', true );
-			wp_enqueue_style( 'bootstrap-5', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-5.min.css', array(), '5.0.0', 'all' );
+			wp_enqueue_script( 'bootstrap-5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/bootstrap-5.min.js', array(), '5.0.1', true );
+			wp_enqueue_style( 'bootstrap-5', plugin_dir_url( dirname( __FILE__ ) ) . 'css/bootstrap-5.min.css', array(), '5.0.1', 'all' );
 		}
 
 		if( $add_popper !=='' && is_singular() && $value_version =='5' ){
-			wp_enqueue_script( 'popper-init-5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init-5.js', array( 'popper-2.9.0'), $this->bl_version, true );
+			wp_enqueue_script( 'popper-init-5', plugin_dir_url( dirname( __FILE__ ) ) . 'js/popper-init-5.js', array( 'popper-2.9.2'), $this->bl_version, true );
 		}
 	}
 
