@@ -2,7 +2,7 @@
 
  - Author: Neil Gowran
  - Contributors: neilgee
- - Version: 1.3.1
+ - Version: 1.3.2
  - Stable tag: 1.2.0
  - Tested up to: 5.6
  - Requires at least: 4.0
